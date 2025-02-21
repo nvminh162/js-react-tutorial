@@ -13,12 +13,6 @@ install package
 install uuid => create id auto
 - npm i uuid
 
-install redux devtools extension
-- npm install @redux-devtools/extension
-
-install reselect
-- npm install reselect
-
 --------------------------------------------------------------
 install redux toolkit
 - npm install @reduxjs/toolkit
