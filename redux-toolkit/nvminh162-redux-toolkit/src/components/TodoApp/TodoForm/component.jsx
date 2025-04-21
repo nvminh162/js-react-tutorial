@@ -3,7 +3,7 @@ import React from 'react';
 function TodoForm() {
   return (
     <div className="px-4 py-4 bg-gray-50">
-      <h1 className="text-2xl font-bold text-center text-gray-800 mb-4">Todo App</h1>
+      <h1 className="text-2xl font-bold text-center text-gray-800 mb-4">Todo App - Redux Core</h1>
       
       {/* Todo Input Form */}
       <div className="flex flex-col space-y-2">

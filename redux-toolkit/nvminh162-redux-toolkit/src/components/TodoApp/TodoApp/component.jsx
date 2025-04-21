@@ -1,7 +1,7 @@
 import React from 'react';
-import TodoForm from './TodoForm';
-import TodoFilter from './TodoFilter';
-import TodoList from './TodoList';
+import TodoForm from '../TodoForm';
+import TodoFilter from '../TodoFilter';
+import TodoList from '../TodoList';
 
 function TodoApp() {
   const sampleTodos = [
@@ -20,7 +20,7 @@ function TodoApp() {
     {
       id: 3,
       text: 'Deploy to production',
-      completed: true,
+      completed: false,
       priority: 'low'
     }
   ];
