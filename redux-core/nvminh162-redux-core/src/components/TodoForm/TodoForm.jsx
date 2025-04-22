@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { addTodoList } from '../../redux/actions';
 import { v4 as uuidv4 } from 'uuid';
 
-function TodoFormComponent() {
+function TodoForm() {
     const [todoName, setTodoName] = useState('');
     const handleOnChangeTodoName = (e) => {
         setTodoName(e.target.value);
@@ -71,4 +71,4 @@ function TodoFormComponent() {
     );
 }
 
-export default TodoFormComponent;
+export default TodoForm;

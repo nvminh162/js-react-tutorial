@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { statusFilter, priorityFilter } from '../../redux/actions';
 
-function TodoFilterComponent() {
+function TodoFilter() {
   const [status, setStatus] = useState('all');
   const [priorities, setPriorities] = useState([]);
   const dispatch = useDispatch();
@@ -107,4 +107,4 @@ function TodoFilterComponent() {
   );
 }
 
-export default TodoFilterComponent;
+export default TodoFilter;

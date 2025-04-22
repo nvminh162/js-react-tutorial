@@ -3,7 +3,7 @@ import TodoItem from '../TodoItem';
 import { useSelector } from 'react-redux';
 import { todosRemainingSelector } from '../../redux/selectors';
 
-function TodoListComponent() {
+function TodoList() {
     const todos = useSelector(todosRemainingSelector);
 
     return (
@@ -17,4 +17,4 @@ function TodoListComponent() {
     );
 }
 
-export default TodoListComponent;
+export default TodoList;
