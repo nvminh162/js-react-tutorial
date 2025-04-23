@@ -1,12 +1,5 @@
-nvminh162 redux core TUTORIAL
+nvminh162 redux toolkit TUTORIAL
 
-install extension
-- Redux devtools
-- React developer tools
-
-yarn add redux react-redux
-
-create folder "redux"
-    store.jsx
-    
-
+```
+npm install @reduxjs/toolkit react react-dom react-redux reselect tailwindcss @tailwindcss/vite uuid
+```
