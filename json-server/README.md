@@ -18,7 +18,7 @@ Edit your `package.json` file to include the following script:
 
 ```json
 "scripts": {
-    "start": "json-server --watch db.json --port 3000",
+    "server": "json-server --watch db.json --port 3000",
     "test": "echo \"Error: no test specified\" && exit 1"
 },
 ```
@@ -28,7 +28,7 @@ Edit your `package.json` file to include the following script:
 1. Create a `db.json` file in your project root with your mock data
 2. Start the server:
    ```bash
-   npm start
+   npm run server
    ```
 3. Access your API at `http://localhost:3000`
 
