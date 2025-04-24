@@ -1,4 +1,31 @@
+// Core
+/* import { SEARCH_FILTER, STATUS_FILTER, PRIORITY_FILTER } from '../../redux/constants';
+
+const initState = {
+    search: '',
+    status: 'all',
+    priority: [],
+};
+
+const todoFilterReducer = (state = initState, action) => {
+    switch (action.type) {
+        case SEARCH_FILTER:
+            return { ...state, search: action.payload };
+        case STATUS_FILTER:
+            return { ...state, status: action.payload };
+        case PRIORITY_FILTER:
+            return { ...state, priority: action.payload };
+        default:
+            return state;
+    }
+};
+
+export default todoFilterReducer;
+ */
+
 import { createSlice } from "@reduxjs/toolkit";
+
+// Toolkit
 
 export const todoFilterSlice = createSlice({
     name: 'filters',
@@ -19,23 +46,3 @@ export const todoFilterSlice = createSlice({
         },
     }
 });
-
-/* 
-(payload) => {
-    return {
-        type: 'filters/searchFilter',
-        payload
-    }    
-}
-
-{
-    reducer,
-    actions
-}
-
-action creator () => {
-    type: 'filters/searchFilter',
-    payload: value    
-}
-    
-*/
