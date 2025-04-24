@@ -1,4 +1,4 @@
-# JSON Server
+# JSON Server - Create API < 30s
 
 A simple REST API mock server based on [json-server](https://github.com/typicode/json-server).
 
