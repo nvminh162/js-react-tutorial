@@ -1,4 +1,3 @@
-# Notebook for study of Nguyen Van Minh
 
 Delete `node_modules`
 ```
