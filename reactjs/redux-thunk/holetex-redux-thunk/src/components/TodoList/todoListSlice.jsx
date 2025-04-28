@@ -31,8 +31,10 @@ const todoListSlice = createSlice({
         state.todos.push(action.payload);
       })
       .addCase(updateTodo.fulfilled, (state, action) => {
-         let currentTodo = state.todos.find(todo => todo.id === action.payload)
-         currentTodo = action.payload
+        const index = state.todos.findIndex(todo => todo.id === action.payload.id);
+        if (index !== -1) {
+          state.todos[index] = action.payload;
+        }
       })
   },
 });
