@@ -1,20 +1,6 @@
-import { useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
-import { createNewUserRedux } from "../action/actions";
 
 const FormAddNew = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [username, setUsername] = useState("");
-
-  const dispatch = useDispatch();
-
-  const isCreating = useSelector(state => (state.user.isCreating))
-
-  const handleCreate = () => {
-    dispatch(createNewUserRedux(email, password, username));
-  };
 
   return (
     <>

@@ -1,8 +1,7 @@
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
-import { useSelector } from "react-redux";
 
 const Header = () => {
-  const users = useSelector((state) => state.user.users);
+
   return (
     <>
       <Navbar bg="dark" variant="dark" expand="lg">
@@ -11,7 +10,7 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <NavDropdown
+              {/* <NavDropdown
                 style={{ marginLeft: "50px" }}
                 title={`(${users.length}) Users`}
                 id="basic-nav-dropdown"
@@ -21,7 +20,7 @@ const Header = () => {
                   users.map((user, index) => (
                     <NavDropdown.Item key={`user-${index}`}>{user.username}</NavDropdown.Item>
                   ))}
-              </NavDropdown>
+              </NavDropdown> */}
             </Nav>
           </Navbar.Collapse>
         </Container>

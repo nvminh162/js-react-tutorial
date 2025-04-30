@@ -1,5 +1,5 @@
 {
-  "name": "redux-core-middleware-thunk",
+  "name": "redux-core",
   "private": true,
   "version": "0.0.0",
   "type": "module",
