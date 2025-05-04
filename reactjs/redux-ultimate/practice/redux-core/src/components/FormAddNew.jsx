@@ -1,6 +1,31 @@
+import { useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { createNewUserRedux } from "../action/actions";
 
 const FormAddNew = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+  
+  const dispatch = useDispatch();
+  const isCreating = useSelector((state) => state.user.isCreating);
+
+  const handleCreate = () => {
+    if (!email || !password || !username) {
+      alert("Vui lòng điền đầy đủ thông tin");
+      return;
+    }
+    
+    dispatch(createNewUserRedux(email, password, username));
+    
+    // Clear form after submit
+    if (!isCreating) {
+      setEmail("");
+      setPassword("");
+      setUsername("");
+    }
+  };
 
   return (
     <>
@@ -32,7 +57,7 @@ const FormAddNew = () => {
             />
           </Form.Group>
           <Button variant="primary" disabled={isCreating} onClick={handleCreate}>
-            Create
+            {isCreating ? "Creating..." : "Create"}
           </Button>
         </Form>
       </Container>
