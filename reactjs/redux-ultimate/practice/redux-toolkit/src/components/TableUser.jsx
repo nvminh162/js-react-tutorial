@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Container, Table } from "react-bootstrap";
-import { fetchAllUsers } from "../redux/slices/userSlice";
+import { deleteUser, fetchAllUsers } from "../redux/slices/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const TableUser = () => {
@@ -12,6 +12,12 @@ const TableUser = () => {
   useEffect(() => {
     dispatch(fetchAllUsers());
   }, []);
+
+  const handleDeleteUser = (id) => {
+    if (window.confirm("Are you sure you want to delete this user?")) {
+      dispatch(deleteUser(id));
+    }
+  }
 
   return (
     <>
@@ -51,7 +57,7 @@ const TableUser = () => {
                           <td>{user.username}</td>
                           <td>
                             <button
-                              // onClick={() => handleDeleteUser(user)}
+                              onClick={() => handleDeleteUser(user.id)}
                               className="btn btn-danger"
                             >
                               Delete

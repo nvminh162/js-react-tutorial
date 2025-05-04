@@ -21,11 +21,32 @@ export const createUser = createAsyncThunk(
   }
 );
 
+export const deleteUser = createAsyncThunk(
+  "users/deleteUser",
+  async (id, { dispatch, rejectWithValue }) => {
+    try {
+      // Đổi từ delete thành post và sửa đường dẫn API để khớp với backend
+      const res = await axios.post(`http://localhost:8080/users/delete/${id}`);
+      if (res && res.data.errCode === 0) {
+        // Sau khi xóa thành công, fetch lại danh sách người dùng
+        dispatch(fetchAllUsers());
+        return res.data;
+      } else {
+        return rejectWithValue("Không thể xóa người dùng");
+      }
+    } catch (error) {
+      console.log(error);
+      return rejectWithValue(error.response?.data || "Có lỗi khi xóa người dùng");
+    }
+  }
+);
+
 const initialState = {
   users: [],
   isLoading: false,
   isError: false,
   isCreating: false,
+  isDeleting: false,
 };
 
 const userSlice = createSlice({
@@ -57,6 +78,17 @@ const userSlice = createSlice({
       })
       .addCase(createUser.rejected, (state) => {
         state.isCreating = false;
+        state.isError = true;
+      })
+      // Xử lý deleteUser
+      .addCase(deleteUser.pending, (state) => {
+        state.isDeleting = true;
+      })
+      .addCase(deleteUser.fulfilled, (state) => {
+        state.isDeleting = false;
+      })
+      .addCase(deleteUser.rejected, (state) => {
+        state.isDeleting = false;
         state.isError = true;
       });
   },
