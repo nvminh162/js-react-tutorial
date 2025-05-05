@@ -1,9 +1,11 @@
 
-Delete `node_modules`
+# Delete `node_modules`
 ```
 rm -rf node_modules package-lock.json
 ```
-Kill port 3306
+
+# Check dependencies
 ```
-npx kill-port 3306
+npm install -save-dev npm-check
+npx npm-check
 ```
