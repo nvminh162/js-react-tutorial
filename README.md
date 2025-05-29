@@ -1,1 +1,1 @@
-# Notebook for study of Nguyen Van Minh
+# Course: Redux Ultimate - Hỏi Dân IT
